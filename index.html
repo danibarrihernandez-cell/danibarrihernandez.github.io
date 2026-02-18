@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Barrientos Hernández - Futuro Médico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: #fff;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .vision-item {
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .vision-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .vision-item p {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        /* Estilos para el código QR */
+        .qr-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+        }
+
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .qr-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-box img {
+            width: 250px;
+            height: 250px;
+            border: 3px solid #667eea;
+            border-radius: 8px;
+        }
+
+        .qr-info h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .qr-info p {
+            text-align: left;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .vision-items {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .qr-container {
+                gap: 1rem;
+                flex-direction: column;
+            }
+
+            .qr-box img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daniel Barrientos Hernández</h1>
+        <p>Futuro Médico | Soñador | Determinado</p>
+    </header>
+
+    <nav>
+        <a href="#about">Sobre Mí</a>
+        <a href="#vision">Mi Visión</a>
+        <a href="#qr">Código QR</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <!-- Sección Sobre Mí -->
+        <section id="about">
+            <h2>📖 Sobre Mí</h2>
+            <p>
+                Hola, soy <span class="highlight">Daniel Barrientos Hernández</span>. Desde que era niño he tenido un sueño muy claro: <span class="highlight">convertirme en doctor</span>. Esta idea nació de muchas pequeñas experiencias, como las series que veía junto a mis padres, la admiración por una carrera que todos consideran difícil y, sobre todo, mi gusto por los <span class="highlight">retos</span>.
+            </p>
+            <p>
+                Ser médico para mí significa más que una profesión: es la oportunidad de <span class="highlight">ayudar a los demás</span>, de marcar una diferencia real en la vida de las personas. Esta pasión me impulsa cada día a superarme, a aprender y a prepararme para el desafío que representa la medicina.
+            </p>
+            <p>
+                Considero que la combinación de <span class="highlight">pasión y disciplina</span> es la clave para alcanzar cualquier objetivo. Enfrento cada día con determinación, sabiendo que el camino hacia la medicina requiere dedicación, esfuerzo y una mentalidad de nunca rendirse.
+            </p>
+        </section>
+
+        <!-- Sección Mi Visión de Futuro -->
+        <section id="vision">
+            <h2>🚀 Mi Visión de Futuro</h2>
+            <p>
+                Mi visión de futuro no se limita únicamente a la medicina. Me imagino como una persona <span class="highlight">exitosa</span>, alcanzando la cima de mis metas, con la capacidad de disfrutar de los frutos de mi esfuerzo y compartirlos con mi familia.
+            </p>
+
+            <div class="vision-items">
+                <div class="vision-item">
+                    <h3>💊 Profesional de la Salud</h3>
+                    <p>Un médico competente que enfrenta desafíos con determinación, que se mantiene actualizado y que brinda atención de calidad a sus pacientes, marcando una diferencia real en sus vidas.</p>
+                </div>
+
+                <div class="vision-item">
+                    <h3>💰 Prosperidad Económica</h3>
+                    <p>Alcanzar estabilidad económica que me permita disfrutar de los lujos que deseo y compartir estos éxitos con mi familia, demostrando que el esfuerzo y la dedicación tienen sus recompensas.</p>
+                </div>
+
+                <div class="vision-item">
+                    <h3>👨‍👩‍👧‍👦 Familia y Relaciones</h3>
+                    <p>Mantener relaciones sólidas y significativas con mis seres queridos, siendo un apoyo para ellos y compartiendo mis logros y alegría con quienes más me importan.</p>
+                </div>
+
+                <div class="vision-item">
+                    <h3>🎯 Éxito Integral</h3>
+                    <p>Un ser humano que busca prosperidad tanto en lo profesional como en lo personal, combinando la pasión por la medicina con la disciplina necesaria para triunfar en todos los aspectos de la vida.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; text-align: center; font-style: italic;">
+                <span class="highlight">En resumen, me veo como alguien que combina pasión y disciplina: un profesional de la salud que enfrenta desafíos con determinación, y al mismo tiempo un ser humano que busca prosperidad para sí mismo y para quienes lo rodean.</span>
+            </p>
+        </section>
+
+        <!-- Sección Código QR -->
+        <section id="qr" class="qr-section">
+            <h2>📱 Comparte Mi Perfil</h2>
+            <p>Escanea este código QR para acceder directamente a mi página web desde tu dispositivo móvil:</p>
+            
+            <div class="qr-container">
+                <div class="qr-box">
+                    <img id="qrImage" src="" alt="Código QR">
+                </div>
+                <div class="qr-info">
+                    <h3>¿Cómo usar?</h3>
+                    <p>📸 Abre la cámara de tu teléfono</p>
+                    <p>📍 Apunta hacia el código QR</p>
+                    <p>🔗 Toca la notificación que aparece</p>
+                    <p>✅ ¡Accede a mi perfil instantáneamente!</p>
+                    <button class="download-btn" onclick="descargarQR()">⬇️ Descargar QR</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contact">
+            <h2>📧 Contacto</h2>
+            <p>Si deseas ponerte en contacto conmigo o conocer más sobre mis proyectos y metas, no dudes en contactarme:</p>
+            <p style="text-align: center; margin-top: 2rem;">
+                <strong>Email:</strong> danibarrihernandez@gmail.com<br>
+                <strong>Número:</strong> <a href="2761179367" style="color: #667eea; text-decoration: none;">2761179367</a><br>
+
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Daniel Barrientos Hernández. Todos los derechos reservados.</p>
+        <p>Diseñado con 💜 | Pasión, Disciplina y Determinación</p>
+    </footer>
+
+    <script>
+        // Generar código QR automáticamente
+        function generarQR() {
+            // Obtén la URL actual de la página
+            const urlActual = window.location.href;
+            
+            // Usa la API de QR Server para generar el código QR
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(urlActual)}`;
+            
+            // Asigna la URL del QR a la imagen
+            document.getElementById('qrImage').src = qrUrl;
+        }
+
+        // Función para descargar el QR
+        function descargarQR() {
+            const qrImage = document.getElementById('qrImage');
+            const enlace = document.createElement('a');
+            enlace.href = qrImage.src;
+            enlace.download = 'codigo-qr-daniel-barrientos.png';
+            enlace.click();
+        }
+
+        // Generar QR cuando carga la página
+        window.addEventListener('load', generarQR);
+    </script>
+</body>
+</html>
